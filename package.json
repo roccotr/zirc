@@ -1,0 +1,31 @@
+{
+  "name": "zirc_react",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "author": "Tutorialzine",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "watchify -v -d -t [ reactify --es6 ] app.js -o public/javascripts/compiled.js",
+    "build": "NODE_ENV=production browserify -t [ reactify --es6 ] app.js | uglifyjs > public/javascripts/compiled.js"
+  },
+  "dependencies": {
+    "async-google-maps": "^0.2.3",
+    "body-parser": "^1.14.0",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "material-ui": "^0.11.1",
+    "moment": "^2.10.2",
+    "morgan": "^1.6.1",
+    "react": "^0.13.2",
+    "react-tap-event-plugin": "^0.1.7",
+    "request": "^2.62.0"
+  },
+  "devDependencies": {
+    "browserify": "^9.0.8",
+    "reactify": "^1.1.0",
+    "uglify-js": "^2.4.20",
+    "watchify": "^3.1.2"
+  }
+}
