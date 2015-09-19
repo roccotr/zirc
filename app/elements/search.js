@@ -4,14 +4,13 @@ var Search = React.createClass({
 
  componentDidMount:function(){
   console.log('search');
-  console.log(this.props);
   var map = this.props.mapHolderRef.getMap();
   var input = document.getElementById('pac-input');
-  var searchBox = new google.maps.places.SearchBox(this.getDOMNode());
+  var searchBox = new google.maps.places.SearchBox(this.getDOMNode().children[0]);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
  },
  render: function(){
-  return (<input id="pac-input" className="controls" type="text" placeholder="Search Box" />);
+  return (<div id="searchbox-container" className="searchbox-container"><input id="searchbox" className="searchbox" type="text" placeholder="Search Box" /></div>);
  }
 });
 

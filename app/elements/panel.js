@@ -14,7 +14,7 @@ render:function(){
  return (
    <div id="panelMap">
     <Search {...mapHolderRef} />
-    <Channels />
+    <Channels {...mapHolderRef} />
    </div>
    );
 }

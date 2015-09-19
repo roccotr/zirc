@@ -76,6 +76,7 @@ loadPolygonFromServer: function() {
    this.loadPolygonFromServer();
  },
  render :function() {
+  var {...polygones} = this.state;
   return (
    <GoogleMap containerProps={{
      ...this.props,
@@ -87,7 +88,7 @@ loadPolygonFromServer: function() {
     defaultZoom={12}
     defaultCenter={{lat: 45.4667, lng:  9.1833}}
     onClick={this._handle_map_click}>
-    <Panel />
+    <Panel {...polygones}/>
     {this.state.markers.map((marker, index) => {
      return (
       <Marker
