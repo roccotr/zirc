@@ -1,6 +1,7 @@
 var React = require('react/addons');
 var Map = require('./map');
 var Panel = require('./panel');
+var Chat = require('./chat');
 
 var Index = React.createClass({
  componentWillMount: function(){
@@ -13,6 +14,7 @@ var Index = React.createClass({
   return(
    <div className="map-container">
       <Map className="map" source="/nbh"/>
+      <Chat />
   </div>
   )
  }

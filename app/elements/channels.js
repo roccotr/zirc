@@ -1,4 +1,5 @@
 var React = require('react');
+var Channel = require('./channel');
 
 var Channels = React.createClass({
  componentDidMount:function(){
@@ -6,7 +7,7 @@ var Channels = React.createClass({
   console.log(this.props);
  },
  render:function(){
-  return (<div id="channels">
+  return (<div id="channels" className="channels">
   <ul>
    {this.props.polygones.map((channel,index) => {
     return (<Channel />);

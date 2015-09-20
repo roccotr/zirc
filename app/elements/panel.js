@@ -10,11 +10,11 @@ var Panel = React.createClass({
    console.log(this.props);
  },
 render:function(){
- var {...mapHolderRef} = this.props;
+ var {...map} = this.props;
  return (
-   <div id="panelMap">
-    <Search {...mapHolderRef} />
-    <Channels {...mapHolderRef} />
+   <div id="panelMap" className="panel-map">
+    <Search {...map} />
+    <Channels {...map} />
    </div>
    );
 }
