@@ -35,18 +35,79 @@ html, body, body > .row{
     box-shadow: 0 2px 4px rgba(0,0,0,0.2),0 -1px 0px rgba(0,0,0,0.02);
 }
 .searchbox-container{
- margin: 15px;
+ margin-bottom: 15px;
 }
 .searchbox{
  position: relative;
 background: #fff;
 border-radius: 2px;
 box-sizing: border-box;
-width: 400px;
+width: 280px;
 height: 48px;
 border-bottom: 1px solid transparent;
 padding: 12px 104px 11px 64px;
 transition-property: background,box-shadow;
 transition-duration: 0.3s;
 z-index: 2;
+border: 0px;
+}
+
+.channels{
+ overflow: auto;
+ max-height: 350px;
+}
+
+.panel-map{
+ margin: 15px;
+ position: absolute;
+ z-index: 2;
+}
+
+
+.chats{
+ position: absolute;
+ bottom: 0px;
+ right: 10px;
+}
+
+.chat{
+ position: relative;
+ width: 260px;
+ float: left;
+ margin-left: 25px;
+}
+
+.chat-app-bar-up, .chat-app-bar-down{
+ min-height: 32px !important;
+ height: 32px;
+}
+.chat-app-bar-up button{
+ padding: 0px !important;
+ height: 32px !important;
+ margin-top: 0px !important;
+}
+.chat-app-bar-up h1{
+ line-height: 32px !important;
+ font-size: 16px !important;
+}
+.chat-app-bar-down{
+ background-color: #e5e5e5 !important;
+}
+.chat .input {
+ background-color: #ffffff;
+ width: 100%;
+}
+
+.context-chat{
+ min-height: 250px;
+ background-color: #ffffff;
+ border-bottom: 1px solid #c6c6c6;
+}
+
+.channels > div > div{
+ border-bottom: 1px solid #c6c6c6;
+}
+.channel > div > div{
+ text-transform: lowercase;
+ padding: 10px 20px !important;
 }

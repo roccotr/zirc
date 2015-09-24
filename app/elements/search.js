@@ -1,7 +1,12 @@
 var React = require('react');
 
-var Search = React.createClass({
+var mui = require('material-ui'),
+Paper = mui.Paper, ThemeManager = new mui.Styles.ThemeManager();
 
+
+var Search = React.createClass({
+ childContextTypes : { muiTheme: React.PropTypes.object },
+  getChildContext: function() { return { muiTheme: ThemeManager.getCurrentTheme() } },
  componentDidMount:function(){
   console.log('search');
   /*var map = this.props.mapHolderRef.getMap();
@@ -10,7 +15,7 @@ var Search = React.createClass({
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);*/
  },
  render: function(){
-  return (<div id="searchbox-container" className="searchbox-container"><input id="searchbox" className="searchbox" type="text" placeholder="Search Box" /></div>);
+  return (<Paper id="searchbox-container" zDepth={1} className="searchbox-container"><input id="searchbox" className="searchbox" type="text" placeholder="Search Box" /></Paper>);
  }
 });
 

@@ -14,7 +14,7 @@ render:function(){
  return (
    <div id="panelMap" className="panel-map">
     <Search {...map} />
-    <Channels {...map} />
+    <Channels {...map} handleChat={this.props.handleChat}/>
    </div>
    );
 }

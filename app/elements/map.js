@@ -88,7 +88,7 @@ loadPolygonFromServer: function() {
     defaultZoom={12}
     defaultCenter={{lat: 45.4667, lng:  9.1833}}
     onClick={this._handle_map_click}>
-    <Panel {...polygones}/>
+    <Panel {...polygones} handleChat={this.props.handleChat}/>
     {this.state.markers.map((marker, index) => {
      return (
       <Marker
