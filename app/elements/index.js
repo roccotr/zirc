@@ -27,7 +27,7 @@ var Index = React.createClass({
   console.log(index,msg);
   this.state.messages[index].push({text:msg,time: new Date(),who:'me'});
   this.setState({messages:this.state.messages});
-  this.state.socket.emit('send_msg',{text:msg,time: new Date()},function(err){
+  this.state.socket.emit('send_msg',{text:msg,time: new Date(),channel:index},function(err){
     console.error(err);
   });
   return true;
@@ -40,10 +40,19 @@ var Index = React.createClass({
  },
  componentDidMount:function(){
   var socket = io();
+  var self = this;
   this.setState({socket:socket});
   socket.emit('new_channel','hello world',function(err){
    console.log(err);
   });
+  socket.on('recv_msg',function(msg){
+   console.log('recv_msg',msg);
+   if(msg.channel){
+    self.state.messages[msg.channel].push(msg);
+    self.setState({messages:self.state.messages});
+
+   }
+  })
   console.log(this.state);
  },
  render:function(){

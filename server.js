@@ -79,14 +79,17 @@ socket.on('connection',function(sck){
  var socket_client = net.Socket();
  socket_client.connect(10001,'localhost');
  socket_client.on('data', function(data) {
-   console.log(data.toString());
+  console.log('data',data.length);
+  console.log('data',data.toString());
+   console.log(JSON.parse(data.toString()));
+   socket.emit('recv_msg',JSON.parse(data.toString()));
    //client.end();
  });
 
  console.log('connection');
  sck.on('new_channel',function(msg){
-  socket_client.write('popopopo');
- })
+  //socket_client.write('popopopo');
+ });
  sck.on('send_msg',function(msg){
    socket_client.write(JSON.stringify(msg));
  });
