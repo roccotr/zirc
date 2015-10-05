@@ -93,9 +93,9 @@ border: 0px;
 .chat-app-bar-down{
  background-color: #e5e5e5 !important;
 }
-.chat .input {
+.chat .input-chat {
  background-color: #ffffff;
- width: 100%;
+ width: 260px !important;
 }
 
 .context-chat{
@@ -108,6 +108,6 @@ border: 0px;
  border-bottom: 1px solid #c6c6c6;
 }
 .channel > div > div{
- text-transform: lowercase;
+ text-transform: capitalize;
  padding: 10px 20px !important;
 }

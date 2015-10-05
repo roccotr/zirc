@@ -5,8 +5,15 @@ var bodyParser = require('body-parser');
 
 var routes = require('./app/routers/index');
 var api = require('./app/routers/api');
+var io = require('socket.io');
+var client = require('socket.io-client');
+
 
 var app = express();
+
+
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app/views'));
@@ -60,4 +67,27 @@ var server = app.listen(5555, function () {
   var port = server.address().port;
 
   console.log('Example app listening at http://%s:%s', host, port);
+});
+
+var net = require('net');
+
+
+
+
+var socket = io(server);
+socket.on('connection',function(sck){
+ var socket_client = net.Socket();
+ socket_client.connect(10001,'localhost');
+ socket_client.on('data', function(data) {
+   console.log(data.toString());
+   //client.end();
+ });
+
+ console.log('connection');
+ sck.on('new_channel',function(msg){
+  socket_client.write('popopopo');
+ })
+ sck.on('send_msg',function(msg){
+   socket_client.write(JSON.stringify(msg));
+ });
 });

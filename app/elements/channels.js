@@ -10,7 +10,7 @@ var Channels = React.createClass({
   console.log('channels');
   console.log(this.props);
  },
- handleClick:function(event,channel){
+ handleClick:function(channel,event){
   console.log(event);
   console.log(channel);
   this.props.handleChat(event,channel);
